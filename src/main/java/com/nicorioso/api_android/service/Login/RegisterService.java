@@ -1,7 +1,7 @@
 package com.nicorioso.api_android.service.Login;
 
-import com.nicorioso.api_android.model.entity.Pokemon;
+import com.nicorioso.api_android.model.entity.User;
 
 public interface RegisterService {
-    Pokemon register(Pokemon pokemon);
+    User register(User user);
 }

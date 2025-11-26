@@ -1,6 +1,5 @@
 package com.nicorioso.api_android.service.Login.impl;
 
-import com.nicorioso.api_android.model.entity.Pokemon;
 import com.nicorioso.api_android.service.Login.AuthenticationService;
 import org.springframework.stereotype.Service;
 
