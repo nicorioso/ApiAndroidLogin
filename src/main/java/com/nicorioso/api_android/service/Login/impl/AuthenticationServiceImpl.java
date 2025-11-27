@@ -18,10 +18,15 @@ public class AuthenticationServiceImpl implements AuthenticationService {
 
     @Override
     public User login(User user) {
-        Optional<User> userOptional = Optional.ofNullable(userRepository.findByName(user.getName())
-                .orElseThrow(() -> new RuntimeException("No se encontro el usuario")));
-        User userEntity = userOptional.orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
+        User userEntity = userRepository.findByName(user.getName())
+                .orElseThrow(() -> new RuntimeException("No se encontró el usuario"));
+
+        if (!user.getPassword().equals(userEntity.getPassword())) {
+            throw new RuntimeException("Contraseña incorrecta");
+        }
+
         return userEntity;
     }
+
 
 }
